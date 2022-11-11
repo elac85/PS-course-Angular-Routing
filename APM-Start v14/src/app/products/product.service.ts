@@ -79,7 +79,7 @@ export class ProductService {
       // The response body may contain clues as to what went wrong,
       errorMessage = `Backend returned code ${err.status}: ${err.message}`;
     }
-    console.error(err);
+    console.error((err));
     return throwError(() => errorMessage);
   }
 

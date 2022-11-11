@@ -1,0 +1,59 @@
+<div class="card">
+    <div class="card-header">
+        {{pageTitle}}
+    </div>
+    <div class="card-body">
+        <form novalidate #productForm="ngForm">
+
+            <div class="row mt-2">
+                <label class="col-md-2 col-form-label" for="productNameId">Product Name</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="productNameId" type="text" placeholder="Name"
+                        name="productName" #productNameVar="ngModel" [(ngModel)]=searchProductParams.name
+                        />
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <label class="col-md-2 col-form-label" for="productCodeId">Product Code</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="productCodeId" type="text" placeholder="Code"
+                        name="productCode" #productCodeVar="ngModel" [(ngModel)]=searchProductParams.code
+                        />
+                </div>
+            </div>
+            <div class="row mt-2">
+                <p>Availability Date Range</p>
+                <label class="col-md-2 col-form-label" for="availDateStart">Start</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="availDateStart" type="date" placeholder="Enter start date here..."
+                        name="availDateStart" #availDateStartVar="ngModel" [(ngModel)]=searchProductParams.startDate
+                    />
+                </div>
+            </div>
+            <div class="row mt-2">
+
+                <label class="col-md-2 col-form-label" for="availDateEnd">End</label>
+                <div class="col-md-8">
+                    <input class="form-control" id="availDateEnd" type="date" placeholder="Enter end date here..."
+                        name="availDateEnd" #availDateEndVar="ngModel" [(ngModel)]=searchProductParams.endDate
+                       />
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-md-4">
+                    <button class="btn btn-primary me-3" style="width:80px" type="button"
+                        [title]="productForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                        [disabled]="!productForm.valid" (click)="searchProduct()">
+                        Search
+                    </button>
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+</div>

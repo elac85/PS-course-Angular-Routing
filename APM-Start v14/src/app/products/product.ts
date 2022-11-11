@@ -16,3 +16,7 @@ export interface ProductResolved {
   product: Product | null;
   error?: string;
 }
+export interface ProductsResolved {
+  product: Product[] | null;
+  error?: string;
+}
