@@ -25,7 +25,7 @@ import {ProductEditTagsComponent} from "./product-edit/product-edit-tags.compone
           {
             path: '',
             redirectTo: 'info',
-            pathMatch: "full"
+            pathMatch: 'full'
           },
           {
             path: 'info',

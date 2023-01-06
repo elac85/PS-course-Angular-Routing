@@ -19,7 +19,7 @@ export class ProductResolver implements Resolve<ProductResolved>{
             const errMessage = `Product id: ${id} is not a number`
             console.log(errMessage);
             return of({product: null, error: errMessage});
-        } 
+        }
         return this.productService.getProduct(id)
         .pipe(
             map(product => {
