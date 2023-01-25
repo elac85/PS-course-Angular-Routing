@@ -13,7 +13,7 @@ export class ProductSearchComponent implements OnInit {
     code: null,
     startDate: null,
     endDate: null
-  };;
+  };
 
   searchProduct(){
     let optionalParams: any = Object.keys(this.searchProductParams)
