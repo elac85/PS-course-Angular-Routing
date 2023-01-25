@@ -11,6 +11,7 @@ import {ProductResolver} from './product-resolver.service';
 import {ProductsResolver} from './products-resolver.service';
 import {ProductEditInfoComponent} from "./product-edit/product-edit-info.component";
 import {ProductEditTagsComponent} from "./product-edit/product-edit-tags.component";
+import {AuthGuard} from "../user/auth.guard";
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import {ProductEditTagsComponent} from "./product-edit/product-edit-tags.compone
     RouterModule.forChild([
       {
         path: 'products',
+        canActivate: [AuthGuard],
         resolve: {resolvedData: ProductsResolver},
         children: [
           {path: '', component: ProductListComponent},
