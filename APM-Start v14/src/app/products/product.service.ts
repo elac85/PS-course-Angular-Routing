@@ -11,6 +11,7 @@ import { Product } from './product';
 })
 export class ProductService {
   private productsUrl = 'api/products';
+  // private productsUrl = 'http://localhost:3000/products'
 
   constructor(private http: HttpClient) { }
 
@@ -61,6 +62,7 @@ export class ProductService {
     return this.http.put<Product>(url, product, { headers })
       .pipe(
         tap(() => console.log('updateProduct: ' + product.id)),
+        tap(() => console.log(product)),
         // Return the product on an update
         map(() => product),
         catchError(this.handleError)
